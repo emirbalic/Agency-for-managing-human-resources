@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="11a1577927934de6b80c0aa743cacb87" Name="Diagram1">
+        <EntityTypeShape EntityType="AgencijaModel.Adrese" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgencijaModel.Drzave" Width="1.5" PointX="1.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgencijaModel.Klijenti" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgencijaModel.Korisnici" Width="1.5" PointX="8.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgencijaModel.KorisniciUloge" Width="1.5" PointX="10.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgencijaModel.Mjesta" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgencijaModel.OcjenaUsluge" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgencijaModel.Osobe" Width="1.5" PointX="6" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgencijaModel.Racuni" Width="1.5" PointX="7.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgencijaModel.Radnici" Width="1.5" PointX="8.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgencijaModel.Rezervacija" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgencijaModel.SkolskaSprema" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgencijaModel.StavkeRezervacije" Width="1.5" PointX="10.5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgencijaModel.Struka" Width="1.5" PointX="6" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgencijaModel.TipAktivnosti" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgencijaModel.Uloge" Width="1.5" PointX="8.25" PointY="14.875" IsExpanded="true" />
+        <AssociationConnector Association="AgencijaModel.FK_Klijenti_Adrese" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_Osobe_Adrese" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_Mjesta_Drzave" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_Klijenti_Mjesta" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_Klijenti_TipAktivnosti" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_OcjenaUsluge_Klijenti" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_Rezervacija_Klijenti" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_Korisnici_Osobe" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_KorisniciUloge_Korisnici" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_KorisniciUloge_Uloge" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_Osobe_Mjesta" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_OcjenaUsluge_Rezervacija" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_Radnici_Osobe" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_Racuni_Rezervacija" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_Radnici_SkolskaSprema" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_Radnici_Struka" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_StavkeRezervacije_Radnici" ManuallyRouted="false" />
+        <AssociationConnector Association="AgencijaModel.FK_Rezervacija_StavkeRezervacije" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

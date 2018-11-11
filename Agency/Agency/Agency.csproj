@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{51FC14C2-C5BE-4290-A90B-6B66F0D44767}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Agency</RootNamespace>
+    <AssemblyName>Agency</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\PregledStrucneSpremeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PregledStrucneSpremeForm.Designer.cs">
+      <DependentUpon>PregledStrucneSpremeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PregledStrukaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PregledStrukaForm.Designer.cs">
+      <DependentUpon>PregledStrukaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PregledTipAktivnostiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PregledTipAktivnostiForm.Designer.cs">
+      <DependentUpon>PregledTipAktivnostiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PregledUlogaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PregledUlogaForm.Designer.cs">
+      <DependentUpon>PregledUlogaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UnosSkolskeSpremeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UnosSkolskeSpremeForm.Designer.cs">
+      <DependentUpon>UnosSkolskeSpremeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UnosStrukeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UnosStrukeForm.Designer.cs">
+      <DependentUpon>UnosStrukeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UnosTipaAktivnostiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UnosTipaAktivnostiForm.Designer.cs">
+      <DependentUpon>UnosTipaAktivnostiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UnosUlogaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UnosUlogaForm.Designer.cs">
+      <DependentUpon>UnosUlogaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\InfoOKlijentuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\InfoOKlijentuForm.Designer.cs">
+      <DependentUpon>InfoOKlijentuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\IzmjenaPristupnihPodatakaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\IzmjenaPristupnihPodatakaForm.Designer.cs">
+      <DependentUpon>IzmjenaPristupnihPodatakaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\IzmjenaLicnihPodatakaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\IzmjenaLicnihPodatakaForm.Designer.cs">
+      <DependentUpon>IzmjenaLicnihPodatakaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\NoviKlijentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\NoviKlijentForm.Designer.cs">
+      <DependentUpon>NoviKlijentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\PretragaAdministracijaKlijenataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\PretragaAdministracijaKlijenataForm.Designer.cs">
+      <DependentUpon>PretragaAdministracijaKlijenataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\RacunInsertAndInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\RacunInsertAndInfoForm.Designer.cs">
+      <DependentUpon>RacunInsertAndInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\RacunZaKlijentaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\RacunZaKlijentaForm.Designer.cs">
+      <DependentUpon>RacunZaKlijentaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\RacunZaKlijentaMaliPrikazForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\RacunZaKlijentaMaliPrikazForm.Designer.cs">
+      <DependentUpon>RacunZaKlijentaMaliPrikazForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\RacunZaKlijentaVelikiPrikazForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\RacunZaKlijentaVelikiPrikazForm.Designer.cs">
+      <DependentUpon>RacunZaKlijentaVelikiPrikazForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="PocetnaStranicaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PocetnaStranicaForm.Designer.cs">
+      <DependentUpon>PocetnaStranicaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Poruke.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Poruke.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\KlijentRacunForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\KlijentRacunForm.Designer.cs">
+      <DependentUpon>KlijentRacunForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RadnikRacunForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RadnikRacunForm.Designer.cs">
+      <DependentUpon>RadnikRacunForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation\PregledRezervacijaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservation\PregledRezervacijaForm.Designer.cs">
+      <DependentUpon>PregledRezervacijaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation\PrikazRacunaZaUslugeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservation\PrikazRacunaZaUslugeForm.Designer.cs">
+      <DependentUpon>PrikazRacunaZaUslugeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation\KalendarDostupnostiRadnikaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservation\KalendarDostupnostiRadnikaForm.Designer.cs">
+      <DependentUpon>KalendarDostupnostiRadnikaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation\NovaRezervacijaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservation\NovaRezervacijaForm.Designer.cs">
+      <DependentUpon>NovaRezervacijaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation\PregledRezervacijaZaRačun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservation\PregledRezervacijaZaRačun.Designer.cs">
+      <DependentUpon>PregledRezervacijaZaRačun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation\PretragaPoStruciForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservation\PretragaPoStruciForm.Designer.cs">
+      <DependentUpon>PretragaPoStruciForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\InfoOKorisnikuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\InfoOKorisnikuForm.Designer.cs">
+      <DependentUpon>InfoOKorisnikuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\IzmjenaLicnihPodatakaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\IzmjenaLicnihPodatakaForm.Designer.cs">
+      <DependentUpon>IzmjenaLicnihPodatakaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\IzmjenaStatusnihPodatakaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\IzmjenaStatusnihPodatakaForm.Designer.cs">
+      <DependentUpon>IzmjenaStatusnihPodatakaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\NoviKorisnikForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\NoviKorisnikForm.Designer.cs">
+      <DependentUpon>NoviKorisnikForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\PretragaAdministracijaKorisnikaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\PretragaAdministracijaKorisnikaForm.Designer.cs">
+      <DependentUpon>PretragaAdministracijaKorisnikaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workers\InfoORadniku.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Workers\InfoORadniku.Designer.cs">
+      <DependentUpon>InfoORadniku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workers\IzmjenaOsnovnihPodatakaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Workers\IzmjenaOsnovnihPodatakaForm.Designer.cs">
+      <DependentUpon>IzmjenaOsnovnihPodatakaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workers\NoviRadnikForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Workers\NoviRadnikForm.Designer.cs">
+      <DependentUpon>NoviRadnikForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workers\PretragaAdministracijaRadnika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Workers\PretragaAdministracijaRadnika.Designer.cs">
+      <DependentUpon>PretragaAdministracijaRadnika.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin\PregledStrucneSpremeForm.resx">
+      <DependentUpon>PregledStrucneSpremeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PregledStrukaForm.resx">
+      <DependentUpon>PregledStrukaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PregledTipAktivnostiForm.resx">
+      <DependentUpon>PregledTipAktivnostiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PregledUlogaForm.resx">
+      <DependentUpon>PregledUlogaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UnosSkolskeSpremeForm.resx">
+      <DependentUpon>UnosSkolskeSpremeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UnosStrukeForm.resx">
+      <DependentUpon>UnosStrukeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UnosTipaAktivnostiForm.resx">
+      <DependentUpon>UnosTipaAktivnostiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UnosUlogaForm.resx">
+      <DependentUpon>UnosUlogaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\InfoOKlijentuForm.resx">
+      <DependentUpon>InfoOKlijentuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\IzmjenaPristupnihPodatakaForm.resx">
+      <DependentUpon>IzmjenaPristupnihPodatakaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\IzmjenaLicnihPodatakaForm.resx">
+      <DependentUpon>IzmjenaLicnihPodatakaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\NoviKlijentForm.resx">
+      <DependentUpon>NoviKlijentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\PretragaAdministracijaKlijenataForm.resx">
+      <DependentUpon>PretragaAdministracijaKlijenataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\RacunInsertAndInfoForm.resx">
+      <DependentUpon>RacunInsertAndInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\RacunZaKlijentaForm.resx">
+      <DependentUpon>RacunZaKlijentaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\RacunZaKlijentaMaliPrikazForm.resx">
+      <DependentUpon>RacunZaKlijentaMaliPrikazForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\RacunZaKlijentaVelikiPrikazForm.resx">
+      <DependentUpon>RacunZaKlijentaVelikiPrikazForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PocetnaStranicaForm.resx">
+      <DependentUpon>PocetnaStranicaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Poruke.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Poruke.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\KlijentRacunForm.resx">
+      <DependentUpon>KlijentRacunForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\KlijentRacunReport.rdlc" />
+    <EmbeddedResource Include="Reports\RadnikRacunForm.resx">
+      <DependentUpon>RadnikRacunForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RadnikRacunReport.rdlc" />
+    <EmbeddedResource Include="Reservation\PregledRezervacijaForm.resx">
+      <DependentUpon>PregledRezervacijaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservation\PrikazRacunaZaUslugeForm.resx">
+      <DependentUpon>PrikazRacunaZaUslugeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservation\KalendarDostupnostiRadnikaForm.resx">
+      <DependentUpon>KalendarDostupnostiRadnikaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservation\NovaRezervacijaForm.resx">
+      <DependentUpon>NovaRezervacijaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservation\PregledRezervacijaZaRačun.resx">
+      <DependentUpon>PregledRezervacijaZaRačun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservation\PretragaPoStruciForm.resx">
+      <DependentUpon>PretragaPoStruciForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\InfoOKorisnikuForm.resx">
+      <DependentUpon>InfoOKorisnikuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\IzmjenaLicnihPodatakaForm.resx">
+      <DependentUpon>IzmjenaLicnihPodatakaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\IzmjenaStatusnihPodatakaForm.resx">
+      <DependentUpon>IzmjenaStatusnihPodatakaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\NoviKorisnikForm.resx">
+      <DependentUpon>NoviKorisnikForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\PretragaAdministracijaKorisnikaForm.resx">
+      <DependentUpon>PretragaAdministracijaKorisnikaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workers\InfoORadniku.resx">
+      <DependentUpon>InfoORadniku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workers\IzmjenaOsnovnihPodatakaForm.resx">
+      <DependentUpon>IzmjenaOsnovnihPodatakaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workers\NoviRadnikForm.resx">
+      <DependentUpon>NoviRadnikForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workers\PretragaAdministracijaRadnika.resx">
+      <DependentUpon>PretragaAdministracijaRadnika.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Agency_Servis.Data.esp_RadniciRezervacijeByRadnikId_Result.datasource" />
+    <None Include="Properties\DataSources\Agency_Servis.Data.esp_RadniciRezervacijeByRadnikSurName_Result1.datasource" />
+    <None Include="Properties\DataSources\Agency_Servis.Data.esp_xrp_Racun_SelectByClientId_Result.datasource" />
+    <None Include="Properties\DataSources\Agency_Servis.Data.esp_xrp_RadniciOsobeSelect_NoArgs_Result.datasource" />
+    <None Include="Properties\DataSources\Agency_Servis.Data.esp_xrp_RezervacijeUPeriodu_Result.datasource" />
+    <None Include="Properties\DataSources\Agency_Servis.Data.Struka.datasource" />
+    <None Include="Properties\DataSources\Agency_Servis.Data.Uloge.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Scripts\jquery-2.0.3.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Agency_Servis\Agency_Servis.csproj">
+      <Project>{2c98dc9e-63d9-4526-a26d-38c511b2e5a4}</Project>
+      <Name>Agency_Servis</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Complete_and_ok_32xLG.png" />
+    <None Include="Resources\folder_Open_32xLG.png" />
+    <None Include="Resources\StatusAnnotations_Help_and_inconclusive_32xLG.png" />
+    <None Include="Resources\Calculator_32xLG.png" />
+    <None Include="Resources\Calculator_16xLG.png" />
+    <None Include="Resources\StatusAnnotations_Blocked_32xLG.png" />
+    <None Include="Resources\user_32xLG.png" />
+    <None Include="Resources\StatusAnnotations_Play_32xLG.png" />
+    <Content Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1042 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AgencijaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="AgencijaEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Adrese" EntityType="AgencijaModel.Adrese" />
+    <EntitySet Name="Drzave" EntityType="AgencijaModel.Drzave" />
+    <EntitySet Name="Klijenti" EntityType="AgencijaModel.Klijenti" />
+    <EntitySet Name="Korisnici" EntityType="AgencijaModel.Korisnici" />
+    <EntitySet Name="KorisniciUloge" EntityType="AgencijaModel.KorisniciUloge" />
+    <EntitySet Name="Mjesta" EntityType="AgencijaModel.Mjesta" />
+    <EntitySet Name="OcjenaUsluge" EntityType="AgencijaModel.OcjenaUsluge" />
+    <EntitySet Name="Osobe" EntityType="AgencijaModel.Osobe" />
+    <EntitySet Name="Racuni" EntityType="AgencijaModel.Racuni" />
+    <EntitySet Name="Radnici" EntityType="AgencijaModel.Radnici" />
+    <EntitySet Name="Rezervacija" EntityType="AgencijaModel.Rezervacija" />
+    <EntitySet Name="SkolskaSprema" EntityType="AgencijaModel.SkolskaSprema" />
+    <EntitySet Name="StavkeRezervacije" EntityType="AgencijaModel.StavkeRezervacije" />
+    <EntitySet Name="Struka" EntityType="AgencijaModel.Struka" />
+    <EntitySet Name="TipAktivnosti" EntityType="AgencijaModel.TipAktivnosti" />
+    <EntitySet Name="Uloge" EntityType="AgencijaModel.Uloge" />
+    <AssociationSet Name="FK_Klijenti_Adrese" Association="AgencijaModel.FK_Klijenti_Adrese">
+      <End Role="Adrese" EntitySet="Adrese" />
+      <End Role="Klijenti" EntitySet="Klijenti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Osobe_Adrese" Association="AgencijaModel.FK_Osobe_Adrese">
+      <End Role="Adrese" EntitySet="Adrese" />
+      <End Role="Osobe" EntitySet="Osobe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mjesta_Drzave" Association="AgencijaModel.FK_Mjesta_Drzave">
+      <End Role="Drzave" EntitySet="Drzave" />
+      <End Role="Mjesta" EntitySet="Mjesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Klijenti_Mjesta" Association="AgencijaModel.FK_Klijenti_Mjesta">
+      <End Role="Mjesta" EntitySet="Mjesta" />
+      <End Role="Klijenti" EntitySet="Klijenti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Klijenti_TipAktivnosti" Association="AgencijaModel.FK_Klijenti_TipAktivnosti">
+      <End Role="TipAktivnosti" EntitySet="TipAktivnosti" />
+      <End Role="Klijenti" EntitySet="Klijenti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OcjenaUsluge_Klijenti" Association="AgencijaModel.FK_OcjenaUsluge_Klijenti">
+      <End Role="Klijenti" EntitySet="Klijenti" />
+      <End Role="OcjenaUsluge" EntitySet="OcjenaUsluge" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rezervacija_Klijenti" Association="AgencijaModel.FK_Rezervacija_Klijenti">
+      <End Role="Klijenti" EntitySet="Klijenti" />
+      <End Role="Rezervacija" EntitySet="Rezervacija" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Korisnici_Osobe" Association="AgencijaModel.FK_Korisnici_Osobe">
+      <End Role="Osobe" EntitySet="Osobe" />
+      <End Role="Korisnici" EntitySet="Korisnici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KorisniciUloge_Korisnici" Association="AgencijaModel.FK_KorisniciUloge_Korisnici">
+      <End Role="Korisnici" EntitySet="Korisnici" />
+      <End Role="KorisniciUloge" EntitySet="KorisniciUloge" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KorisniciUloge_Uloge" Association="AgencijaModel.FK_KorisniciUloge_Uloge">
+      <End Role="Uloge" EntitySet="Uloge" />
+      <End Role="KorisniciUloge" EntitySet="KorisniciUloge" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Osobe_Mjesta" Association="AgencijaModel.FK_Osobe_Mjesta">
+      <End Role="Mjesta" EntitySet="Mjesta" />
+      <End Role="Osobe" EntitySet="Osobe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OcjenaUsluge_Rezervacija" Association="AgencijaModel.FK_OcjenaUsluge_Rezervacija">
+      <End Role="Rezervacija" EntitySet="Rezervacija" />
+      <End Role="OcjenaUsluge" EntitySet="OcjenaUsluge" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Radnici_Osobe" Association="AgencijaModel.FK_Radnici_Osobe">
+      <End Role="Osobe" EntitySet="Osobe" />
+      <End Role="Radnici" EntitySet="Radnici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Racuni_Rezervacija" Association="AgencijaModel.FK_Racuni_Rezervacija">
+      <End Role="Rezervacija" EntitySet="Rezervacija" />
+      <End Role="Racuni" EntitySet="Racuni" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Radnici_SkolskaSprema" Association="AgencijaModel.FK_Radnici_SkolskaSprema">
+      <End Role="SkolskaSprema" EntitySet="SkolskaSprema" />
+      <End Role="Radnici" EntitySet="Radnici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Radnici_Struka" Association="AgencijaModel.FK_Radnici_Struka">
+      <End Role="Struka" EntitySet="Struka" />
+      <End Role="Radnici" EntitySet="Radnici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StavkeRezervacije_Radnici" Association="AgencijaModel.FK_StavkeRezervacije_Radnici">
+      <End Role="Radnici" EntitySet="Radnici" />
+      <End Role="StavkeRezervacije" EntitySet="StavkeRezervacije" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rezervacija_StavkeRezervacije" Association="AgencijaModel.FK_Rezervacija_StavkeRezervacije">
+      <End Role="StavkeRezervacije" EntitySet="StavkeRezervacije" />
+      <End Role="Rezervacija" EntitySet="Rezervacija" />
+    </AssociationSet>
+    <FunctionImport Name="esp_KorisniciInsert" ReturnType="Collection(Decimal)">
+      <Parameter Name="Ime" Mode="In" Type="String" />
+      <Parameter Name="Prezime" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Telefon" Mode="In" Type="String" />
+      <Parameter Name="KorisnickoIme" Mode="In" Type="String" />
+      <Parameter Name="LozinkaSalt" Mode="In" Type="String" />
+      <Parameter Name="LozinkaHash" Mode="In" Type="String" />
+      <Parameter Name="MjestoId" Mode="In" Type="Int32" />
+      <Parameter Name="UlicaIBroj" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_KorisniciUlogeDelete">
+      <Parameter Name="KorisnikID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_KorisniciUlogeInsert">
+      <Parameter Name="KorisnikId" Mode="In" Type="Int32" />
+      <Parameter Name="UlogaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_UlogeSelectAll" EntitySet="Uloge" ReturnType="Collection(AgencijaModel.Uloge)" />
+    <FunctionImport Name="esp_MjestaSelectAll" EntitySet="Mjesta" ReturnType="Collection(AgencijaModel.Mjesta)" />
+    <FunctionImport Name="esp_KorisniciSelectByKorisnickoIme" EntitySet="Korisnici" ReturnType="Collection(AgencijaModel.Korisnici)">
+      <Parameter Name="KorisnickoIme" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_KorisniciUlogeSelectByKorisnik" EntitySet="Uloge" ReturnType="Collection(AgencijaModel.Uloge)">
+      <Parameter Name="KorisnikID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_KorisniciSelectByName" ReturnType="Collection(AgencijaModel.esp_KorisniciSelectByName_Result)">
+      <Parameter Name="ImeIPrezime" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_KorisniciUpdateStatus">
+      <Parameter Name="KorisnikID" Mode="In" Type="Int32" />
+      <Parameter Name="StatusNaSistemu" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="esp_KorisniciSelectById" EntitySet="Korisnici" ReturnType="Collection(AgencijaModel.Korisnici)">
+      <Parameter Name="KorisnikID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_OsobeSelectByKorisnikID" EntitySet="Osobe" ReturnType="Collection(AgencijaModel.Osobe)">
+      <Parameter Name="KorisnikId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_KorisniciResetPass">
+      <Parameter Name="KorisnikID" Mode="In" Type="Int32" />
+      <Parameter Name="LozinkaSalt" Mode="In" Type="String" />
+      <Parameter Name="LozinkaHash" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_SkolskaSpremaInsert">
+      <Parameter Name="Naziv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_StrukaInsert">
+      <Parameter Name="Naziv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_UlogeInsert">
+      <Parameter Name="Naziv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_KlijentiInsert">
+      <Parameter Name="Naziv" Mode="In" Type="String" />
+      <Parameter Name="Telefon" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="UlicaIBroj" Mode="In" Type="String" />
+      <Parameter Name="MjestoID" Mode="In" Type="Int32" />
+      <Parameter Name="TipAktivnostiId" Mode="In" Type="Int32" />
+      <Parameter Name="KorisnickoIme" Mode="In" Type="String" />
+      <Parameter Name="LozinkaSalt" Mode="In" Type="String" />
+      <Parameter Name="LozinkaHash" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_TipAktivnostiSelectAll" EntitySet="TipAktivnosti" ReturnType="Collection(AgencijaModel.TipAktivnosti)" />
+    <FunctionImport Name="esp_KlijentiSelectAllByNaziv" ReturnType="Collection(AgencijaModel.esp_KlijentiSelectAllByNaziv_Result)">
+      <Parameter Name="Naziv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_KlijentiUpdateLicnihPodataka">
+      <Parameter Name="Naziv" Mode="In" Type="String" />
+      <Parameter Name="Telefon" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="UlicaIBroj" Mode="In" Type="String" />
+      <Parameter Name="MjestoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_KlijentiChangeUsername">
+      <Parameter Name="Naziv" Mode="In" Type="String" />
+      <Parameter Name="KorisnickoIme" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_KlijentiResetPass">
+      <Parameter Name="Naziv" Mode="In" Type="String" />
+      <Parameter Name="LozinkaSalt" Mode="In" Type="String" />
+      <Parameter Name="LozinkaHash" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_SkolskaSpremaSelectAll" EntitySet="SkolskaSprema" ReturnType="Collection(AgencijaModel.SkolskaSprema)" />
+    <FunctionImport Name="esp_StrukaSelectAll" EntitySet="Struka" ReturnType="Collection(AgencijaModel.Struka)" />
+    <FunctionImport Name="esp_RadniciInsert">
+      <Parameter Name="Ime" Mode="In" Type="String" />
+      <Parameter Name="Prezime" Mode="In" Type="String" />
+      <Parameter Name="JMBG" Mode="In" Type="String" />
+      <Parameter Name="UlicaIBroj" Mode="In" Type="String" />
+      <Parameter Name="MjestoId" Mode="In" Type="Int32" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Telefon" Mode="In" Type="String" />
+      <Parameter Name="StrukaId" Mode="In" Type="Int32" />
+      <Parameter Name="SkolskaSpremaId" Mode="In" Type="Int32" />
+      <Parameter Name="CijenaPoSatu" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="esp_RadniciOsobeSelectByName_ToUpdate" ReturnType="Collection(AgencijaModel.esp_RadniciOsobeSelectByName_ToUpdate_Result)">
+      <Parameter Name="ImeIPrezime" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_RadniciOsobeSelectById_ToUpdate" ReturnType="Collection(AgencijaModel.esp_RadniciOsobeSelectById_ToUpdate_Result)">
+      <Parameter Name="RadnikId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_RadniciUpdateStatus">
+      <Parameter Name="RadnikID" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="esp_RadniciSelectByID" EntitySet="Radnici" ReturnType="Collection(AgencijaModel.Radnici)">
+      <Parameter Name="RadnikID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_RadniciUpdateOsnovnihPodataka">
+      <Parameter Name="OsobaId" Mode="In" Type="Int32" />
+      <Parameter Name="RadnikId" Mode="In" Type="Int32" />
+      <Parameter Name="Telefon" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="CijenaPoSatu" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="esp_RadniciOsobeSelectAll" ReturnType="Collection(AgencijaModel.esp_RadniciOsobeSelectAll_Result)">
+      <Parameter Name="RadnikId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_StrukeSelect" ReturnType="Collection(AgencijaModel.esp_StrukeSelect_Result)" />
+    <FunctionImport Name="esp_RadniciSelectByStrukaNaziv" ReturnType="Collection(AgencijaModel.esp_RadniciSelectByStrukaNaziv_Result)">
+      <Parameter Name="StrukaNaziv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_StavkeRezervacijeSelectByRadnikID" EntitySet="StavkeRezervacije" ReturnType="Collection(AgencijaModel.StavkeRezervacije)">
+      <Parameter Name="RadnikID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_KlijentiSelect" EntitySet="Klijenti" ReturnType="Collection(AgencijaModel.Klijenti)" />
+    <FunctionImport Name="esp_RezervacijaCreate">
+      <Parameter Name="KlijentId" Mode="In" Type="Int32" />
+      <Parameter Name="RadnikId" Mode="In" Type="Int32" />
+      <Parameter Name="DatumRezervacije" Mode="In" Type="DateTime" />
+      <Parameter Name="DatumPocetka" Mode="In" Type="DateTime" />
+      <Parameter Name="DatumZavrsetka" Mode="In" Type="DateTime" />
+      <Parameter Name="BrojRadnihSati" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_RadniciSelectNamesOnly" ReturnType="Collection(AgencijaModel.esp_RadniciSelectNamesOnly_Result)" />
+    <FunctionImport Name="esp_RadniciRezervacijeByRadnikId" ReturnType="Collection(AgencijaModel.esp_RadniciRezervacijeByRadnikId_Result)">
+      <Parameter Name="RadnikId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_RacunSelectDataOnly" ReturnType="Collection(AgencijaModel.esp_RacunSelectDataOnly_Result)">
+      <Parameter Name="RadnikID" Mode="In" Type="Int32" />
+      <Parameter Name="RezervacijaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_RezervacijeSelectByClientName" ReturnType="Collection(AgencijaModel.esp_RezervacijeSelectByClientName_Result)">
+      <Parameter Name="Naziv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_RacunInsert" ReturnType="Collection(Decimal)">
+      <Parameter Name="Iznos" Mode="In" Type="Int32" />
+      <Parameter Name="RezervacijaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_RacunSelectByClientId" ReturnType="Collection(AgencijaModel.esp_RacunSelectByClientId_Result)">
+      <Parameter Name="KlijentID" Mode="In" Type="Int32" />
+      <Parameter Name="RezervacijaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_RezervacijeSelectByKlijentId" ReturnType="Collection(AgencijaModel.esp_RezervacijeSelectByKlijentId_Result)">
+      <Parameter Name="KlijentId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_RacunSelectByRezervacijaId" ReturnType="Collection(AgencijaModel.esp_RacunSelectByRezervacijaId_Result)">
+      <Parameter Name="RezervacijaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_OsobeUpdateLicnihPodataka">
+      <Parameter Name="OsobaId" Mode="In" Type="Int32" />
+      <Parameter Name="Ime" Mode="In" Type="String" />
+      <Parameter Name="Prezime" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Telefon" Mode="In" Type="String" />
+      <Parameter Name="UlicaIBroj" Mode="In" Type="String" />
+      <Parameter Name="MjestoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_TipAktivnostiInsert">
+      <Parameter Name="Naziv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_UlogeSelectByKorisnikId" EntitySet="Uloge" ReturnType="Collection(AgencijaModel.Uloge)">
+      <Parameter Name="KorisnikId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_KlijentiSelectToUpdateAccessDataByNaziv" EntitySet="Klijenti" ReturnType="Collection(AgencijaModel.Klijenti)">
+      <Parameter Name="Naziv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_web_RadniciSelectByStruka" ReturnType="Collection(AgencijaModel.esp_web_RadniciSelectByStruka_Result)">
+      <Parameter Name="StrukaId" Mode="In" Type="Int32" />
+      <Parameter Name="Offset" Mode="In" Type="Int32" />
+      <Parameter Name="MaxRows" Mode="In" Type="Int32" />
+      <Parameter Name="TotalRows" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_web_RadniciSelectByStrukaImeIPrezime" ReturnType="Collection(AgencijaModel.esp_web_RadniciSelectByStrukaImeIPrezime_Result)">
+      <Parameter Name="StrukaId" Mode="In" Type="Int32" />
+      <Parameter Name="ImeIPrezime" Mode="In" Type="String" />
+      <Parameter Name="Offset" Mode="In" Type="Int32" />
+      <Parameter Name="MaxRows" Mode="In" Type="Int32" />
+      <Parameter Name="TotalRows" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_web_KlijentiInsert">
+      <Parameter Name="Naziv" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="UlicaIBroj" Mode="In" Type="String" />
+      <Parameter Name="MjestoID" Mode="In" Type="Int32" />
+      <Parameter Name="TipAktivnostiId" Mode="In" Type="Int32" />
+      <Parameter Name="KorisnickoIme" Mode="In" Type="String" />
+      <Parameter Name="LozinkaSalt" Mode="In" Type="String" />
+      <Parameter Name="LozinkaHash" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_web_KlijentiSelectByKorisnickoIme" EntitySet="Klijenti" ReturnType="Collection(AgencijaModel.Klijenti)">
+      <Parameter Name="KorisnickoIme" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_RezervacijeCancelByRadnikId">
+      <Parameter Name="RadnikId" Mode="In" Type="Int32" />
+      <Parameter Name="DatumRezervacije" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="esp_xrp_RezervacijeUPeriodu" ReturnType="Collection(AgencijaModel.esp_xrp_RezervacijeUPeriodu_Result)">
+      <Parameter Name="DatumPocetka" Mode="In" Type="DateTime" />
+      <Parameter Name="DatumZavrsetka" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="esp_web_RezervacijaRadniciSelectByKlijentId" ReturnType="Collection(AgencijaModel.esp_web_RezervacijaRadniciSelectByKlijentId_Result)">
+      <Parameter Name="KlijentId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_web_OcjeneUslugeInsert">
+      <Parameter Name="KlijentId" Mode="In" Type="Int32" />
+      <Parameter Name="RezervacijaId" Mode="In" Type="Int32" />
+      <Parameter Name="Ocjena" Mode="In" Type="Int32" />
+      <Parameter Name="Primjedba" Mode="In" Type="String" />
+      <Parameter Name="Sugestije" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_xrp_RadniciOsobeSelect_NoArgs" ReturnType="Collection(AgencijaModel.esp_xrp_RadniciOsobeSelect_NoArgs_Result)" />
+    <FunctionImport Name="esp_RadniciRezervacijeByRadnikSurName" ReturnType="Collection(AgencijaModel.esp_RadniciRezervacijeByRadnikSurName_Result)">
+      <Parameter Name="Prezime" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="esp_xrp_Racun_SelectByClientId" ReturnType="Collection(AgencijaModel.esp_xrp_Racun_SelectByClientId_Result)">
+      <Parameter Name="KlijentId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="esp_web_PreporukaPoOcjeni" ReturnType="Collection(AgencijaModel.esp_web_PreporukaPoOcjeni_Result)" />
+    <FunctionImport Name="esp_web_PreporukaPoStruci" ReturnType="Collection(AgencijaModel.esp_web_PreporukaPoStruci_Result)">
+      <Parameter Name="StrukaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Adrese">
+    <Key>
+      <PropertyRef Name="AdresaId" />
+    </Key>
+    <Property Name="AdresaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UlicaIBroj" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Klijenti" Relationship="AgencijaModel.FK_Klijenti_Adrese" FromRole="Adrese" ToRole="Klijenti" />
+    <NavigationProperty Name="Osobe" Relationship="AgencijaModel.FK_Osobe_Adrese" FromRole="Adrese" ToRole="Osobe" />
+  </EntityType>
+  <EntityType Name="Drzave">
+    <Key>
+      <PropertyRef Name="DrzavaId" />
+    </Key>
+    <Property Name="DrzavaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="Mjesta" Relationship="AgencijaModel.FK_Mjesta_Drzave" FromRole="Drzave" ToRole="Mjesta" />
+  </EntityType>
+  <EntityType Name="Klijenti">
+    <Key>
+      <PropertyRef Name="KlijentId" />
+    </Key>
+    <Property Name="KlijentId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Telefon" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AdresaId" Type="Int32" Nullable="false" />
+    <Property Name="MjestoId" Type="Int32" Nullable="false" />
+    <Property Name="TipAktivnostiId" Type="Int32" Nullable="false" />
+    <Property Name="KorisnickoIme" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LozinkaSalt" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LozinkaHash" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Adrese" Relationship="AgencijaModel.FK_Klijenti_Adrese" FromRole="Klijenti" ToRole="Adrese" />
+    <NavigationProperty Name="Mjesta" Relationship="AgencijaModel.FK_Klijenti_Mjesta" FromRole="Klijenti" ToRole="Mjesta" />
+    <NavigationProperty Name="TipAktivnosti" Relationship="AgencijaModel.FK_Klijenti_TipAktivnosti" FromRole="Klijenti" ToRole="TipAktivnosti" />
+    <NavigationProperty Name="OcjenaUsluge" Relationship="AgencijaModel.FK_OcjenaUsluge_Klijenti" FromRole="Klijenti" ToRole="OcjenaUsluge" />
+    <NavigationProperty Name="Rezervacija" Relationship="AgencijaModel.FK_Rezervacija_Klijenti" FromRole="Klijenti" ToRole="Rezervacija" />
+  </EntityType>
+  <EntityType Name="Korisnici">
+    <Key>
+      <PropertyRef Name="KorisnikId" />
+    </Key>
+    <Property Name="KorisnikId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OsobaId" Type="Int32" Nullable="false" />
+    <Property Name="KorisnickoIme" Type="String" MaxLength="50" Unicode="true" FixedLength="false" Nullable="false" />
+    <Property Name="StatusNaSistemu" Type="Boolean" />
+    <Property Name="LozinkaSalt" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LozinkaHash" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Osobe" Relationship="AgencijaModel.FK_Korisnici_Osobe" FromRole="Korisnici" ToRole="Osobe" />
+    <NavigationProperty Name="KorisniciUloge" Relationship="AgencijaModel.FK_KorisniciUloge_Korisnici" FromRole="Korisnici" ToRole="KorisniciUloge" />
+  </EntityType>
+  <EntityType Name="KorisniciUloge">
+    <Key>
+      <PropertyRef Name="KorisnikUlogaId" />
+    </Key>
+    <Property Name="KorisnikUlogaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="KorisnikId" Type="Int32" Nullable="false" />
+    <Property Name="UlogaId" Type="Int32" Nullable="false" />
+    <Property Name="DatumIzmjene" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Korisnici" Relationship="AgencijaModel.FK_KorisniciUloge_Korisnici" FromRole="KorisniciUloge" ToRole="Korisnici" />
+    <NavigationProperty Name="Uloge" Relationship="AgencijaModel.FK_KorisniciUloge_Uloge" FromRole="KorisniciUloge" ToRole="Uloge" />
+  </EntityType>
+  <EntityType Name="Mjesta">
+    <Key>
+      <PropertyRef Name="MjestoId" />
+    </Key>
+    <Property Name="MjestoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DrzavaId" Type="Int32" />
+    <Property Name="Naziv" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+    <Property Name="PostanskiBroj" Type="String" MaxLength="15" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="Drzave" Relationship="AgencijaModel.FK_Mjesta_Drzave" FromRole="Mjesta" ToRole="Drzave" />
+    <NavigationProperty Name="Klijenti" Relationship="AgencijaModel.FK_Klijenti_Mjesta" FromRole="Mjesta" ToRole="Klijenti" />
+    <NavigationProperty Name="Osobe" Relationship="AgencijaModel.FK_Osobe_Mjesta" FromRole="Mjesta" ToRole="Osobe" />
+  </EntityType>
+  <EntityType Name="OcjenaUsluge">
+    <Key>
+      <PropertyRef Name="OcjenaUslugeId" />
+    </Key>
+    <Property Name="OcjenaUslugeId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="KlijentId" Type="Int32" Nullable="false" />
+    <Property Name="RezervacijaId" Type="Int32" Nullable="false" />
+    <Property Name="Ocjena" Type="Int32" Nullable="false" />
+    <Property Name="Primjedba" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Sugestije" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Klijenti" Relationship="AgencijaModel.FK_OcjenaUsluge_Klijenti" FromRole="OcjenaUsluge" ToRole="Klijenti" />
+    <NavigationProperty Name="Rezervacija" Relationship="AgencijaModel.FK_OcjenaUsluge_Rezervacija" FromRole="OcjenaUsluge" ToRole="Rezervacija" />
+  </EntityType>
+  <EntityType Name="Osobe">
+    <Key>
+      <PropertyRef Name="OsobaId" />
+    </Key>
+    <Property Name="OsobaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Ime" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Prezime" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="JMBG" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AdresaId" Type="Int32" Nullable="false" />
+    <Property Name="MjestoId" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Telefon" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
+    <Property Name="Slika" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="SlikaThumb" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Adrese" Relationship="AgencijaModel.FK_Osobe_Adrese" FromRole="Osobe" ToRole="Adrese" />
+    <NavigationProperty Name="Korisnici" Relationship="AgencijaModel.FK_Korisnici_Osobe" FromRole="Osobe" ToRole="Korisnici" />
+    <NavigationProperty Name="Mjesta" Relationship="AgencijaModel.FK_Osobe_Mjesta" FromRole="Osobe" ToRole="Mjesta" />
+    <NavigationProperty Name="Radnici" Relationship="AgencijaModel.FK_Radnici_Osobe" FromRole="Osobe" ToRole="Radnici" />
+  </EntityType>
+  <EntityType Name="Racuni">
+    <Key>
+      <PropertyRef Name="RacunId" />
+    </Key>
+    <Property Name="RacunId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Iznos" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="RezervacijaId" Type="Int32" />
+    <Property Name="DatumIspostaveRacuna" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Rezervacija" Relationship="AgencijaModel.FK_Racuni_Rezervacija" FromRole="Racuni" ToRole="Rezervacija" />
+  </EntityType>
+  <EntityType Name="Radnici">
+    <Key>
+      <PropertyRef Name="RadnikId" />
+    </Key>
+    <Property Name="RadnikId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OsobaId" Type="Int32" Nullable="false" />
+    <Property Name="StrukaId" Type="Int32" Nullable="false" />
+    <Property Name="SkolskaSpremaId" Type="Int32" Nullable="false" />
+    <Property Name="CijenaPoSatu" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="DatumPrveRegistracije" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Osobe" Relationship="AgencijaModel.FK_Radnici_Osobe" FromRole="Radnici" ToRole="Osobe" />
+    <NavigationProperty Name="SkolskaSprema" Relationship="AgencijaModel.FK_Radnici_SkolskaSprema" FromRole="Radnici" ToRole="SkolskaSprema" />
+    <NavigationProperty Name="Struka" Relationship="AgencijaModel.FK_Radnici_Struka" FromRole="Radnici" ToRole="Struka" />
+    <NavigationProperty Name="StavkeRezervacije" Relationship="AgencijaModel.FK_StavkeRezervacije_Radnici" FromRole="Radnici" ToRole="StavkeRezervacije" />
+  </EntityType>
+  <EntityType Name="Rezervacija">
+    <Key>
+      <PropertyRef Name="RezervacijaId" />
+    </Key>
+    <Property Name="RezervacijaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="KlijentId" Type="Int32" Nullable="false" />
+    <Property Name="StavkeRezervacijeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Klijenti" Relationship="AgencijaModel.FK_Rezervacija_Klijenti" FromRole="Rezervacija" ToRole="Klijenti" />
+    <NavigationProperty Name="OcjenaUsluge" Relationship="AgencijaModel.FK_OcjenaUsluge_Rezervacija" FromRole="Rezervacija" ToRole="OcjenaUsluge" />
+    <NavigationProperty Name="Racuni" Relationship="AgencijaModel.FK_Racuni_Rezervacija" FromRole="Rezervacija" ToRole="Racuni" />
+    <NavigationProperty Name="StavkeRezervacije" Relationship="AgencijaModel.FK_Rezervacija_StavkeRezervacije" FromRole="Rezervacija" ToRole="StavkeRezervacije" />
+  </EntityType>
+  <EntityType Name="SkolskaSprema">
+    <Key>
+      <PropertyRef Name="SkolskaSpremaId" />
+    </Key>
+    <Property Name="SkolskaSpremaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Radnici" Relationship="AgencijaModel.FK_Radnici_SkolskaSprema" FromRole="SkolskaSprema" ToRole="Radnici" />
+  </EntityType>
+  <EntityType Name="StavkeRezervacije">
+    <Key>
+      <PropertyRef Name="StavkeRezervacijeId" />
+    </Key>
+    <Property Name="StavkeRezervacijeId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="RadnikId" Type="Int32" Nullable="false" />
+    <Property Name="DatumRezervacije" Type="DateTime" Precision="3" />
+    <Property Name="DatumPocetka" Type="DateTime" Precision="3" />
+    <Property Name="DatumZavrsetka" Type="DateTime" Precision="3" />
+    <Property Name="StatusRezervacije" Type="Boolean" />
+    <Property Name="BrojRadnihSati" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Radnici" Relationship="AgencijaModel.FK_StavkeRezervacije_Radnici" FromRole="StavkeRezervacije" ToRole="Radnici" />
+    <NavigationProperty Name="Rezervacija" Relationship="AgencijaModel.FK_Rezervacija_StavkeRezervacije" FromRole="StavkeRezervacije" ToRole="Rezervacija" />
+  </EntityType>
+  <EntityType Name="Struka">
+    <Key>
+      <PropertyRef Name="StrukaId" />
+    </Key>
+    <Property Name="StrukaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Radnici" Relationship="AgencijaModel.FK_Radnici_Struka" FromRole="Struka" ToRole="Radnici" />
+  </EntityType>
+  <EntityType Name="TipAktivnosti">
+    <Key>
+      <PropertyRef Name="TipAktivnostiId" />
+    </Key>
+    <Property Name="TipAktivnostiId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Klijenti" Relationship="AgencijaModel.FK_Klijenti_TipAktivnosti" FromRole="TipAktivnosti" ToRole="Klijenti" />
+  </EntityType>
+  <EntityType Name="Uloge">
+    <Key>
+      <PropertyRef Name="UlogaId" />
+    </Key>
+    <Property Name="UlogaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="KorisniciUloge" Relationship="AgencijaModel.FK_KorisniciUloge_Uloge" FromRole="Uloge" ToRole="KorisniciUloge" />
+  </EntityType>
+  <Association Name="FK_Klijenti_Adrese">
+    <End Role="Adrese" Type="AgencijaModel.Adrese" Multiplicity="1" />
+    <End Role="Klijenti" Type="AgencijaModel.Klijenti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adrese">
+        <PropertyRef Name="AdresaId" />
+      </Principal>
+      <Dependent Role="Klijenti">
+        <PropertyRef Name="AdresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Osobe_Adrese">
+    <End Role="Adrese" Type="AgencijaModel.Adrese" Multiplicity="1" />
+    <End Role="Osobe" Type="AgencijaModel.Osobe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adrese">
+        <PropertyRef Name="AdresaId" />
+      </Principal>
+      <Dependent Role="Osobe">
+        <PropertyRef Name="AdresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mjesta_Drzave">
+    <End Role="Drzave" Type="AgencijaModel.Drzave" Multiplicity="0..1" />
+    <End Role="Mjesta" Type="AgencijaModel.Mjesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drzave">
+        <PropertyRef Name="DrzavaId" />
+      </Principal>
+      <Dependent Role="Mjesta">
+        <PropertyRef Name="DrzavaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Klijenti_Mjesta">
+    <End Role="Mjesta" Type="AgencijaModel.Mjesta" Multiplicity="1" />
+    <End Role="Klijenti" Type="AgencijaModel.Klijenti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mjesta">
+        <PropertyRef Name="MjestoId" />
+      </Principal>
+      <Dependent Role="Klijenti">
+        <PropertyRef Name="MjestoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Klijenti_TipAktivnosti">
+    <End Role="TipAktivnosti" Type="AgencijaModel.TipAktivnosti" Multiplicity="1" />
+    <End Role="Klijenti" Type="AgencijaModel.Klijenti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipAktivnosti">
+        <PropertyRef Name="TipAktivnostiId" />
+      </Principal>
+      <Dependent Role="Klijenti">
+        <PropertyRef Name="TipAktivnostiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OcjenaUsluge_Klijenti">
+    <End Role="Klijenti" Type="AgencijaModel.Klijenti" Multiplicity="1" />
+    <End Role="OcjenaUsluge" Type="AgencijaModel.OcjenaUsluge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klijenti">
+        <PropertyRef Name="KlijentId" />
+      </Principal>
+      <Dependent Role="OcjenaUsluge">
+        <PropertyRef Name="KlijentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rezervacija_Klijenti">
+    <End Role="Klijenti" Type="AgencijaModel.Klijenti" Multiplicity="1" />
+    <End Role="Rezervacija" Type="AgencijaModel.Rezervacija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klijenti">
+        <PropertyRef Name="KlijentId" />
+      </Principal>
+      <Dependent Role="Rezervacija">
+        <PropertyRef Name="KlijentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Korisnici_Osobe">
+    <End Role="Osobe" Type="AgencijaModel.Osobe" Multiplicity="1" />
+    <End Role="Korisnici" Type="AgencijaModel.Korisnici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Osobe">
+        <PropertyRef Name="OsobaId" />
+      </Principal>
+      <Dependent Role="Korisnici">
+        <PropertyRef Name="OsobaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KorisniciUloge_Korisnici">
+    <End Role="Korisnici" Type="AgencijaModel.Korisnici" Multiplicity="1" />
+    <End Role="KorisniciUloge" Type="AgencijaModel.KorisniciUloge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnici">
+        <PropertyRef Name="KorisnikId" />
+      </Principal>
+      <Dependent Role="KorisniciUloge">
+        <PropertyRef Name="KorisnikId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KorisniciUloge_Uloge">
+    <End Role="Uloge" Type="AgencijaModel.Uloge" Multiplicity="1" />
+    <End Role="KorisniciUloge" Type="AgencijaModel.KorisniciUloge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uloge">
+        <PropertyRef Name="UlogaId" />
+      </Principal>
+      <Dependent Role="KorisniciUloge">
+        <PropertyRef Name="UlogaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Osobe_Mjesta">
+    <End Role="Mjesta" Type="AgencijaModel.Mjesta" Multiplicity="1" />
+    <End Role="Osobe" Type="AgencijaModel.Osobe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mjesta">
+        <PropertyRef Name="MjestoId" />
+      </Principal>
+      <Dependent Role="Osobe">
+        <PropertyRef Name="MjestoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OcjenaUsluge_Rezervacija">
+    <End Role="Rezervacija" Type="AgencijaModel.Rezervacija" Multiplicity="1" />
+    <End Role="OcjenaUsluge" Type="AgencijaModel.OcjenaUsluge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rezervacija">
+        <PropertyRef Name="RezervacijaId" />
+      </Principal>
+      <Dependent Role="OcjenaUsluge">
+        <PropertyRef Name="RezervacijaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Radnici_Osobe">
+    <End Role="Osobe" Type="AgencijaModel.Osobe" Multiplicity="1" />
+    <End Role="Radnici" Type="AgencijaModel.Radnici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Osobe">
+        <PropertyRef Name="OsobaId" />
+      </Principal>
+      <Dependent Role="Radnici">
+        <PropertyRef Name="OsobaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Racuni_Rezervacija">
+    <End Role="Rezervacija" Type="AgencijaModel.Rezervacija" Multiplicity="0..1" />
+    <End Role="Racuni" Type="AgencijaModel.Racuni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rezervacija">
+        <PropertyRef Name="RezervacijaId" />
+      </Principal>
+      <Dependent Role="Racuni">
+        <PropertyRef Name="RezervacijaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Radnici_SkolskaSprema">
+    <End Role="SkolskaSprema" Type="AgencijaModel.SkolskaSprema" Multiplicity="1" />
+    <End Role="Radnici" Type="AgencijaModel.Radnici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SkolskaSprema">
+        <PropertyRef Name="SkolskaSpremaId" />
+      </Principal>
+      <Dependent Role="Radnici">
+        <PropertyRef Name="SkolskaSpremaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Radnici_Struka">
+    <End Role="Struka" Type="AgencijaModel.Struka" Multiplicity="1" />
+    <End Role="Radnici" Type="AgencijaModel.Radnici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Struka">
+        <PropertyRef Name="StrukaId" />
+      </Principal>
+      <Dependent Role="Radnici">
+        <PropertyRef Name="StrukaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StavkeRezervacije_Radnici">
+    <End Role="Radnici" Type="AgencijaModel.Radnici" Multiplicity="1" />
+    <End Role="StavkeRezervacije" Type="AgencijaModel.StavkeRezervacije" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Radnici">
+        <PropertyRef Name="RadnikId" />
+      </Principal>
+      <Dependent Role="StavkeRezervacije">
+        <PropertyRef Name="RadnikId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rezervacija_StavkeRezervacije">
+    <End Role="StavkeRezervacije" Type="AgencijaModel.StavkeRezervacije" Multiplicity="1" />
+    <End Role="Rezervacija" Type="AgencijaModel.Rezervacija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StavkeRezervacije">
+        <PropertyRef Name="StavkeRezervacijeId" />
+      </Principal>
+      <Dependent Role="Rezervacija">
+        <PropertyRef Name="StavkeRezervacijeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="esp_UlogeSelectAll_Result">
+    <Property Type="Int32" Name="UlogaId" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_MjestaSelectAll_Result">
+    <Property Type="Int32" Name="MjestoId" Nullable="false" />
+    <Property Type="Int32" Name="DrzavaId" Nullable="true" />
+    <Property Type="String" Name="Naziv" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PostanskiBroj" Nullable="true" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="esp_KorisniciSelectByKorisnickoIme_Result">
+    <Property Type="Int32" Name="KorisnikId" Nullable="false" />
+    <Property Type="Int32" Name="OsobaId" Nullable="false" />
+    <Property Type="String" Name="KorisnickoIme" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="StatusNaSistemu" Nullable="true" />
+    <Property Type="String" Name="LozinkaSalt" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LozinkaHash" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_KorisniciUlogeSelectByKorisnik_Result">
+    <Property Type="Int32" Name="UlogaId" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_KorisniciSelectByName_Result">
+    <Property Type="Int32" Name="OsobaID" Nullable="false" />
+    <Property Type="Int32" Name="KorisnikID" Nullable="false" />
+    <Property Type="String" Name="Prezime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Ime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telefon" Nullable="true" MaxLength="10" />
+    <Property Type="Boolean" Name="StatusNaSistemu" Nullable="true" />
+    <Property Type="Int32" Name="BrojUloga" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="esp_KorisniciSelectById_Result">
+    <Property Type="Int32" Name="KorisnikId" Nullable="false" />
+    <Property Type="Int32" Name="OsobaId" Nullable="false" />
+    <Property Type="String" Name="KorisnickoIme" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="StatusNaSistemu" Nullable="true" />
+    <Property Type="String" Name="LozinkaSalt" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LozinkaHash" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_OsobeSelectByKorisnikID_Result">
+    <Property Type="Int32" Name="OsobaId" Nullable="false" />
+    <Property Type="String" Name="Ime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Prezime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="JMBG" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AdresaId" Nullable="false" />
+    <Property Type="Int32" Name="MjestoId" Nullable="false" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telefon" Nullable="true" MaxLength="10" />
+    <Property Type="Binary" Name="Slika" Nullable="true" />
+    <Property Type="Binary" Name="SlikaThumb" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="esp_TipAktivnostiSelectAll_Result">
+    <Property Type="Int32" Name="TipAktivnostiId" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_KlijentiSelectAllByNaziv_Result">
+    <Property Type="String" Name="Klijent" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Telefon" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Tip_Aktivnosti" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UlicaIBroj" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Mjesto" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Država" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_SkolskaSpremaSelectAll_Result">
+    <Property Type="Int32" Name="SkolskaSpremaId" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_StrukaSelectAll_Result">
+    <Property Type="Int32" Name="StrukaId" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_RadniciOsobeSelectByName_ToUpdate_Result">
+    <Property Type="Int32" Name="RadnikId" Nullable="false" />
+    <Property Type="Int32" Name="OsobaId" Nullable="false" />
+    <Property Type="String" Name="Prezime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Ime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telefon" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="CijenaPoSatu" Nullable="true" Precision="5" Scale="2" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="esp_RadniciOsobeSelectById_ToUpdate_Result">
+    <Property Type="Int32" Name="RadnikId" Nullable="false" />
+    <Property Type="Int32" Name="OsobaId" Nullable="false" />
+    <Property Type="String" Name="Prezime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Ime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telefon" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="CijenaPoSatu" Nullable="true" Precision="5" Scale="2" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="esp_RadniciSelectByID_Result">
+    <Property Type="Int32" Name="RadnikId" Nullable="false" />
+    <Property Type="Int32" Name="OsobaId" Nullable="false" />
+    <Property Type="Int32" Name="StrukaId" Nullable="false" />
+    <Property Type="Int32" Name="SkolskaSpremaId" Nullable="false" />
+    <Property Type="Decimal" Name="CijenaPoSatu" Nullable="true" Precision="5" Scale="2" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="DateTime" Name="DatumPrveRegistracije" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="esp_RadniciOsobeSelectAll_Result">
+    <Property Type="Int32" Name="RadnikId" Nullable="false" />
+    <Property Type="Int32" Name="OsobaId" Nullable="false" />
+    <Property Type="String" Name="Prezime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Ime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="JMBG" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telefon" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Struka" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Stručna_sprema" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="CijenaPoSatu" Nullable="true" Precision="5" Scale="2" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="DateTime" Name="DatumPrveRegistracije" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="esp_StrukeSelect_Result">
+    <Property Type="Int32" Name="StrukaId" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_RadniciSelectByStrukaNaziv_Result">
+    <Property Type="Int32" Name="OsobaID" Nullable="false" />
+    <Property Type="Int32" Name="RadnikID" Nullable="false" />
+    <Property Type="String" Name="Prezime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Ime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Struka" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Stručna_sprema" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telefon" Nullable="true" MaxLength="10" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="DateTime" Name="DatumPrveRegistracije" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="esp_StavkeRezervacijeSelectByRadnikID_Result">
+    <Property Type="Int32" Name="StavkeRezervacijeId" Nullable="false" />
+    <Property Type="Int32" Name="RadnikId" Nullable="false" />
+    <Property Type="DateTime" Name="DatumRezervacije" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DatumPocetka" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DatumZavrsetka" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="StatusRezervacije" Nullable="true" />
+    <Property Type="Int32" Name="BrojRadnihSati" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="esp_KlijentiSelect_Result">
+    <Property Type="Int32" Name="KlijentId" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Telefon" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AdresaId" Nullable="false" />
+    <Property Type="Int32" Name="MjestoId" Nullable="false" />
+    <Property Type="Int32" Name="TipAktivnostiId" Nullable="false" />
+    <Property Type="String" Name="KorisnickoIme" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LozinkaSalt" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LozinkaHash" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_RadniciSelectNamesOnly_Result">
+    <Property Type="Int32" Name="RadnikID" Nullable="false" />
+    <Property Type="String" Name="FULLNAME" Nullable="false" MaxLength="101" />
+  </ComplexType>
+  <ComplexType Name="esp_RadniciRezervacijeByRadnikId_Result">
+    <Property Type="Int32" Name="RezervacijaID" Nullable="false" />
+    <Property Type="String" Name="Puno_ime" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="Struka" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Stručna_sprema" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="CijenaPoSatu" Nullable="true" Precision="5" Scale="2" />
+    <Property Type="DateTime" Name="DatumRezervacije" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="BrojRadnihSati" Nullable="false" />
+    <Property Type="String" Name="Naziv_firme" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Tip_aktivnosti" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_RacunSelectDataOnly_Result">
+    <Property Type="String" Name="Puno_ime" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="Struka" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Stručna_sprema" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="CijenaPoSatu" Nullable="true" Precision="5" Scale="2" />
+    <Property Type="DateTime" Name="DatumRezervacije" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DatumPocetka" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DatumZavrsetka" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="BrojRadnihSati" Nullable="false" />
+    <Property Type="String" Name="Naziv_Firme" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Tip_aktivnosti" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_RezervacijeSelectByClientName_Result">
+    <Property Type="Int32" Name="RezervacijaId" Nullable="false" />
+    <Property Type="String" Name="Klijent" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="DatumRezervacije" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Ime_i_prezime" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="BrojRadnihSati" Nullable="false" />
+    <Property Type="Decimal" Name="CijenaPoSatu" Nullable="true" Precision="5" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="esp_RacunSelectByClientId_Result">
+    <Property Type="String" Name="Naziv_Firme" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Tip_aktivnosti" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Ime_i_prezime_radnika" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="Struka" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Stručna_sprema" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DatumIspostaveRacuna" Nullable="true" />
+    <Property Type="DateTime" Name="DatumRezervacije" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DatumPocetka" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DatumZavrsetka" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="BrojRadnihSati" Nullable="false" />
+    <Property Type="Decimal" Name="CijenaPoSatu" Nullable="true" Precision="5" Scale="2" />
+    <Property Type="Decimal" Name="Ukupan_iznos_računa" Nullable="false" Precision="7" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="esp_RezervacijeSelectByKlijentId_Result">
+    <Property Type="Int32" Name="RezervacijaId" Nullable="false" />
+    <Property Type="String" Name="Klijent" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="DatumRezervacije" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Ime_i_prezime" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="BrojRadnihSati" Nullable="false" />
+    <Property Type="Decimal" Name="CijenaPoSatu" Nullable="true" Precision="5" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="esp_RacunSelectByRezervacijaId_Result">
+    <Property Type="String" Name="Klijent" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="Iznos" Nullable="false" Precision="7" Scale="2" />
+    <Property Type="DateTime" Name="DatumIspostaveRacuna" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="esp_UlogeSelectByKorisnikId_Result">
+    <Property Type="Int32" Name="UlogaId" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_KlijentiSelectToUpdateAccessDataByNaziv_Result">
+    <Property Type="Int32" Name="KlijentId" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Telefon" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AdresaId" Nullable="false" />
+    <Property Type="Int32" Name="MjestoId" Nullable="false" />
+    <Property Type="Int32" Name="TipAktivnostiId" Nullable="false" />
+    <Property Type="String" Name="KorisnickoIme" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LozinkaSalt" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LozinkaHash" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_web_RadniciSelectByStruka_Result">
+    <Property Type="Int32" Name="RadnikID" Nullable="false" />
+    <Property Type="String" Name="Prezime_i_ime" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="Struka" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Strucna_sprema" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="CijenaPoSatu" Nullable="true" Precision="5" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="esp_web_RadniciSelectByStrukaImeIPrezime_Result">
+    <Property Type="Int32" Name="RadnikID" Nullable="false" />
+    <Property Type="String" Name="Prezime_i_ime" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="Struka" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Strucna_sprema" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="CijenaPoSatu" Nullable="true" Precision="5" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="esp_web_KlijentiSelectByKorisnickoIme_Result">
+    <Property Type="Int32" Name="KlijentId" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Telefon" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AdresaId" Nullable="false" />
+    <Property Type="Int32" Name="MjestoId" Nullable="false" />
+    <Property Type="Int32" Name="TipAktivnostiId" Nullable="false" />
+    <Property Type="String" Name="KorisnickoIme" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LozinkaSalt" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LozinkaHash" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_xrp_RezervacijeUPeriodu_Result">
+    <Property Type="Int32" Name="BrojRezervacija" Nullable="true" />
+    <Property Type="Int32" Name="BrojRadnihSati" Nullable="true" />
+    <Property Type="DateTime" Name="DatumRezervacije" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="esp_web_RezervacijaRadniciSelectByKlijentId_Result">
+    <Property Type="Int32" Name="RezervacijaId" Nullable="false" />
+    <Property Type="String" Name="Prezime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Ime" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="DatumRezervacije" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DatumPocetka" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DatumZavrsetka" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="BrojRadnihSati" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="esp_xrp_RadniciOsobeSelect_NoArgs_Result">
+    <Property Type="Int32" Name="RadnikId" Nullable="false" />
+    <Property Type="String" Name="Prezime_i_ime" Nullable="false" MaxLength="101" />
+  </ComplexType>
+  <ComplexType Name="esp_RadniciRezervacijeByRadnikSurName_Result">
+    <Property Type="Int32" Name="RezervacijaID" Nullable="false" />
+    <Property Type="String" Name="Puno_ime" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="Struka" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Stručna_sprema" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="CijenaPoSatu" Nullable="true" Precision="5" Scale="2" />
+    <Property Type="DateTime" Name="DatumRezervacije" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="BrojRadnihSati" Nullable="false" />
+    <Property Type="String" Name="Naziv_firme" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Tip_aktivnosti" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_xrp_Racun_SelectByClientId_Result">
+    <Property Type="Int32" Name="RezervacijaId" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="DatumRezervacije" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DatumPocetka" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="BrojRadnihSati" Nullable="false" />
+    <Property Type="Decimal" Name="CijenaPoSatu" Nullable="true" Precision="5" Scale="2" />
+    <Property Type="String" Name="Ime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Prezime" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="esp_web_PreporukaPoOcjeni_Result">
+    <Property Type="Int32" Name="RadnikID" Nullable="false" />
+    <Property Type="String" Name="Prezime_i_ime" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="Struka" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Strucna_sprema" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="CijenaPoSatu" Nullable="true" Precision="5" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="esp_web_PreporukaPoStruci_Result">
+    <Property Type="Int32" Name="RadnikID" Nullable="false" />
+    <Property Type="String" Name="Prezime_i_ime" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="Struka" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Strucna_sprema" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="CijenaPoSatu" Nullable="true" Precision="5" Scale="2" />
+  </ComplexType>
+</Schema>

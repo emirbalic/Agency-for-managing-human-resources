@@ -1,0 +1,8 @@
+c:\Users\emir\documents\visual studio 2012\Projects\Agency\Agency_Servis\bin\Debug\Agency_Servis.dll.config
+c:\Users\emir\documents\visual studio 2012\Projects\Agency\Agency_Servis\bin\Debug\Agency_Servis.dll
+c:\Users\emir\documents\visual studio 2012\Projects\Agency\Agency_Servis\bin\Debug\Agency_Servis.pdb
+c:\Users\emir\documents\visual studio 2012\Projects\Agency\Agency_Servis\bin\Debug\EntityFramework.dll
+c:\Users\emir\documents\visual studio 2012\Projects\Agency\Agency_Servis\bin\Debug\EntityFramework.xml
+c:\Users\emir\documents\visual studio 2012\Projects\Agency\Agency_Servis\obj\Debug\Agency_Servis.dll
+c:\Users\emir\documents\visual studio 2012\Projects\Agency\Agency_Servis\obj\Debug\Agency_Servis.pdb
+C:\Users\emir\Documents\Visual Studio 2012\Projects\Agency\Agency_Servis\obj\Debug\Agency_Servis.csprojResolveAssemblyReference.cache

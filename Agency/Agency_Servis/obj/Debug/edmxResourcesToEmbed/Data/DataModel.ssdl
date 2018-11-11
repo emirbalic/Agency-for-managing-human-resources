@@ -1,0 +1,697 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AgencijaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AgencijaModelStoreContainer">
+    <EntitySet Name="Adrese" EntityType="AgencijaModel.Store.Adrese" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Drzave" EntityType="AgencijaModel.Store.Drzave" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Klijenti" EntityType="AgencijaModel.Store.Klijenti" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Korisnici" EntityType="AgencijaModel.Store.Korisnici" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KorisniciUloge" EntityType="AgencijaModel.Store.KorisniciUloge" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Mjesta" EntityType="AgencijaModel.Store.Mjesta" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OcjenaUsluge" EntityType="AgencijaModel.Store.OcjenaUsluge" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Osobe" EntityType="AgencijaModel.Store.Osobe" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Racuni" EntityType="AgencijaModel.Store.Racuni" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Radnici" EntityType="AgencijaModel.Store.Radnici" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Rezervacija" EntityType="AgencijaModel.Store.Rezervacija" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SkolskaSprema" EntityType="AgencijaModel.Store.SkolskaSprema" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StavkeRezervacije" EntityType="AgencijaModel.Store.StavkeRezervacije" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Struka" EntityType="AgencijaModel.Store.Struka" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipAktivnosti" EntityType="AgencijaModel.Store.TipAktivnosti" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Uloge" EntityType="AgencijaModel.Store.Uloge" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Klijenti_Adrese" Association="AgencijaModel.Store.FK_Klijenti_Adrese">
+      <End Role="Adrese" EntitySet="Adrese" />
+      <End Role="Klijenti" EntitySet="Klijenti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Klijenti_Mjesta" Association="AgencijaModel.Store.FK_Klijenti_Mjesta">
+      <End Role="Mjesta" EntitySet="Mjesta" />
+      <End Role="Klijenti" EntitySet="Klijenti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Klijenti_TipAktivnosti" Association="AgencijaModel.Store.FK_Klijenti_TipAktivnosti">
+      <End Role="TipAktivnosti" EntitySet="TipAktivnosti" />
+      <End Role="Klijenti" EntitySet="Klijenti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Korisnici_Osobe" Association="AgencijaModel.Store.FK_Korisnici_Osobe">
+      <End Role="Osobe" EntitySet="Osobe" />
+      <End Role="Korisnici" EntitySet="Korisnici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KorisniciUloge_Korisnici" Association="AgencijaModel.Store.FK_KorisniciUloge_Korisnici">
+      <End Role="Korisnici" EntitySet="Korisnici" />
+      <End Role="KorisniciUloge" EntitySet="KorisniciUloge" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KorisniciUloge_Uloge" Association="AgencijaModel.Store.FK_KorisniciUloge_Uloge">
+      <End Role="Uloge" EntitySet="Uloge" />
+      <End Role="KorisniciUloge" EntitySet="KorisniciUloge" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mjesta_Drzave" Association="AgencijaModel.Store.FK_Mjesta_Drzave">
+      <End Role="Drzave" EntitySet="Drzave" />
+      <End Role="Mjesta" EntitySet="Mjesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OcjenaUsluge_Klijenti" Association="AgencijaModel.Store.FK_OcjenaUsluge_Klijenti">
+      <End Role="Klijenti" EntitySet="Klijenti" />
+      <End Role="OcjenaUsluge" EntitySet="OcjenaUsluge" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OcjenaUsluge_Rezervacija" Association="AgencijaModel.Store.FK_OcjenaUsluge_Rezervacija">
+      <End Role="Rezervacija" EntitySet="Rezervacija" />
+      <End Role="OcjenaUsluge" EntitySet="OcjenaUsluge" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Osobe_Adrese" Association="AgencijaModel.Store.FK_Osobe_Adrese">
+      <End Role="Adrese" EntitySet="Adrese" />
+      <End Role="Osobe" EntitySet="Osobe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Osobe_Mjesta" Association="AgencijaModel.Store.FK_Osobe_Mjesta">
+      <End Role="Mjesta" EntitySet="Mjesta" />
+      <End Role="Osobe" EntitySet="Osobe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Racuni_Rezervacija" Association="AgencijaModel.Store.FK_Racuni_Rezervacija">
+      <End Role="Rezervacija" EntitySet="Rezervacija" />
+      <End Role="Racuni" EntitySet="Racuni" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Radnici_Osobe" Association="AgencijaModel.Store.FK_Radnici_Osobe">
+      <End Role="Osobe" EntitySet="Osobe" />
+      <End Role="Radnici" EntitySet="Radnici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Radnici_SkolskaSprema" Association="AgencijaModel.Store.FK_Radnici_SkolskaSprema">
+      <End Role="SkolskaSprema" EntitySet="SkolskaSprema" />
+      <End Role="Radnici" EntitySet="Radnici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Radnici_Struka" Association="AgencijaModel.Store.FK_Radnici_Struka">
+      <End Role="Struka" EntitySet="Struka" />
+      <End Role="Radnici" EntitySet="Radnici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rezervacija_Klijenti" Association="AgencijaModel.Store.FK_Rezervacija_Klijenti">
+      <End Role="Klijenti" EntitySet="Klijenti" />
+      <End Role="Rezervacija" EntitySet="Rezervacija" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rezervacija_StavkeRezervacije" Association="AgencijaModel.Store.FK_Rezervacija_StavkeRezervacije">
+      <End Role="StavkeRezervacije" EntitySet="StavkeRezervacije" />
+      <End Role="Rezervacija" EntitySet="Rezervacija" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StavkeRezervacije_Radnici" Association="AgencijaModel.Store.FK_StavkeRezervacije_Radnici">
+      <End Role="Radnici" EntitySet="Radnici" />
+      <End Role="StavkeRezervacije" EntitySet="StavkeRezervacije" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Adrese">
+    <Key>
+      <PropertyRef Name="AdresaId" />
+    </Key>
+    <Property Name="AdresaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UlicaIBroj" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Drzave">
+    <Key>
+      <PropertyRef Name="DrzavaId" />
+    </Key>
+    <Property Name="DrzavaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="nchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Klijenti">
+    <Key>
+      <PropertyRef Name="KlijentId" />
+    </Key>
+    <Property Name="KlijentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Telefon" Type="nchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdresaId" Type="int" Nullable="false" />
+    <Property Name="MjestoId" Type="int" Nullable="false" />
+    <Property Name="TipAktivnostiId" Type="int" Nullable="false" />
+    <Property Name="KorisnickoIme" Type="nvarchar" MaxLength="50" />
+    <Property Name="LozinkaSalt" Type="nvarchar" MaxLength="50" />
+    <Property Name="LozinkaHash" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Korisnici">
+    <Key>
+      <PropertyRef Name="KorisnikId" />
+    </Key>
+    <Property Name="KorisnikId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OsobaId" Type="int" Nullable="false" />
+    <Property Name="KorisnickoIme" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="StatusNaSistemu" Type="bit" />
+    <Property Name="LozinkaSalt" Type="nvarchar" MaxLength="50" />
+    <Property Name="LozinkaHash" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="KorisniciUloge">
+    <Key>
+      <PropertyRef Name="KorisnikUlogaId" />
+    </Key>
+    <Property Name="KorisnikUlogaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="KorisnikId" Type="int" Nullable="false" />
+    <Property Name="UlogaId" Type="int" Nullable="false" />
+    <Property Name="DatumIzmjene" Type="date" />
+  </EntityType>
+  <EntityType Name="Mjesta">
+    <Key>
+      <PropertyRef Name="MjestoId" />
+    </Key>
+    <Property Name="MjestoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DrzavaId" Type="int" />
+    <Property Name="Naziv" Type="nchar" Nullable="false" MaxLength="50" />
+    <Property Name="PostanskiBroj" Type="nchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="OcjenaUsluge">
+    <Key>
+      <PropertyRef Name="OcjenaUslugeId" />
+    </Key>
+    <Property Name="OcjenaUslugeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="KlijentId" Type="int" Nullable="false" />
+    <Property Name="RezervacijaId" Type="int" Nullable="false" />
+    <Property Name="Ocjena" Type="int" Nullable="false" />
+    <Property Name="Primjedba" Type="nvarchar(max)" />
+    <Property Name="Sugestije" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Osobe">
+    <Key>
+      <PropertyRef Name="OsobaId" />
+    </Key>
+    <Property Name="OsobaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Ime" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Prezime" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="JMBG" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdresaId" Type="int" Nullable="false" />
+    <Property Name="MjestoId" Type="int" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefon" Type="nchar" MaxLength="20" />
+    <Property Name="Slika" Type="varbinary(max)" />
+    <Property Name="SlikaThumb" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Racuni">
+    <Key>
+      <PropertyRef Name="RacunId" />
+    </Key>
+    <Property Name="RacunId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Iznos" Type="decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="RezervacijaId" Type="int" />
+    <Property Name="DatumIspostaveRacuna" Type="date" />
+  </EntityType>
+  <EntityType Name="Radnici">
+    <Key>
+      <PropertyRef Name="RadnikId" />
+    </Key>
+    <Property Name="RadnikId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OsobaId" Type="int" Nullable="false" />
+    <Property Name="StrukaId" Type="int" Nullable="false" />
+    <Property Name="SkolskaSpremaId" Type="int" Nullable="false" />
+    <Property Name="CijenaPoSatu" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="DatumPrveRegistracije" Type="date" />
+  </EntityType>
+  <EntityType Name="Rezervacija">
+    <Key>
+      <PropertyRef Name="RezervacijaId" />
+    </Key>
+    <Property Name="RezervacijaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="KlijentId" Type="int" Nullable="false" />
+    <Property Name="StavkeRezervacijeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SkolskaSprema">
+    <Key>
+      <PropertyRef Name="SkolskaSpremaId" />
+    </Key>
+    <Property Name="SkolskaSpremaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="StavkeRezervacije">
+    <Key>
+      <PropertyRef Name="StavkeRezervacijeId" />
+    </Key>
+    <Property Name="StavkeRezervacijeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RadnikId" Type="int" Nullable="false" />
+    <Property Name="DatumRezervacije" Type="datetime" />
+    <Property Name="DatumPocetka" Type="datetime" />
+    <Property Name="DatumZavrsetka" Type="datetime" />
+    <Property Name="StatusRezervacije" Type="bit" />
+    <Property Name="BrojRadnihSati" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Struka">
+    <Key>
+      <PropertyRef Name="StrukaId" />
+    </Key>
+    <Property Name="StrukaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TipAktivnosti">
+    <Key>
+      <PropertyRef Name="TipAktivnostiId" />
+    </Key>
+    <Property Name="TipAktivnostiId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Uloge">
+    <Key>
+      <PropertyRef Name="UlogaId" />
+    </Key>
+    <Property Name="UlogaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Klijenti_Adrese">
+    <End Role="Adrese" Type="AgencijaModel.Store.Adrese" Multiplicity="1" />
+    <End Role="Klijenti" Type="AgencijaModel.Store.Klijenti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adrese">
+        <PropertyRef Name="AdresaId" />
+      </Principal>
+      <Dependent Role="Klijenti">
+        <PropertyRef Name="AdresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Klijenti_Mjesta">
+    <End Role="Mjesta" Type="AgencijaModel.Store.Mjesta" Multiplicity="1" />
+    <End Role="Klijenti" Type="AgencijaModel.Store.Klijenti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mjesta">
+        <PropertyRef Name="MjestoId" />
+      </Principal>
+      <Dependent Role="Klijenti">
+        <PropertyRef Name="MjestoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Klijenti_TipAktivnosti">
+    <End Role="TipAktivnosti" Type="AgencijaModel.Store.TipAktivnosti" Multiplicity="1" />
+    <End Role="Klijenti" Type="AgencijaModel.Store.Klijenti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipAktivnosti">
+        <PropertyRef Name="TipAktivnostiId" />
+      </Principal>
+      <Dependent Role="Klijenti">
+        <PropertyRef Name="TipAktivnostiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Korisnici_Osobe">
+    <End Role="Osobe" Type="AgencijaModel.Store.Osobe" Multiplicity="1" />
+    <End Role="Korisnici" Type="AgencijaModel.Store.Korisnici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Osobe">
+        <PropertyRef Name="OsobaId" />
+      </Principal>
+      <Dependent Role="Korisnici">
+        <PropertyRef Name="OsobaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KorisniciUloge_Korisnici">
+    <End Role="Korisnici" Type="AgencijaModel.Store.Korisnici" Multiplicity="1" />
+    <End Role="KorisniciUloge" Type="AgencijaModel.Store.KorisniciUloge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnici">
+        <PropertyRef Name="KorisnikId" />
+      </Principal>
+      <Dependent Role="KorisniciUloge">
+        <PropertyRef Name="KorisnikId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KorisniciUloge_Uloge">
+    <End Role="Uloge" Type="AgencijaModel.Store.Uloge" Multiplicity="1" />
+    <End Role="KorisniciUloge" Type="AgencijaModel.Store.KorisniciUloge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uloge">
+        <PropertyRef Name="UlogaId" />
+      </Principal>
+      <Dependent Role="KorisniciUloge">
+        <PropertyRef Name="UlogaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mjesta_Drzave">
+    <End Role="Drzave" Type="AgencijaModel.Store.Drzave" Multiplicity="0..1" />
+    <End Role="Mjesta" Type="AgencijaModel.Store.Mjesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drzave">
+        <PropertyRef Name="DrzavaId" />
+      </Principal>
+      <Dependent Role="Mjesta">
+        <PropertyRef Name="DrzavaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OcjenaUsluge_Klijenti">
+    <End Role="Klijenti" Type="AgencijaModel.Store.Klijenti" Multiplicity="1" />
+    <End Role="OcjenaUsluge" Type="AgencijaModel.Store.OcjenaUsluge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klijenti">
+        <PropertyRef Name="KlijentId" />
+      </Principal>
+      <Dependent Role="OcjenaUsluge">
+        <PropertyRef Name="KlijentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OcjenaUsluge_Rezervacija">
+    <End Role="Rezervacija" Type="AgencijaModel.Store.Rezervacija" Multiplicity="1" />
+    <End Role="OcjenaUsluge" Type="AgencijaModel.Store.OcjenaUsluge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rezervacija">
+        <PropertyRef Name="RezervacijaId" />
+      </Principal>
+      <Dependent Role="OcjenaUsluge">
+        <PropertyRef Name="RezervacijaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Osobe_Adrese">
+    <End Role="Adrese" Type="AgencijaModel.Store.Adrese" Multiplicity="1" />
+    <End Role="Osobe" Type="AgencijaModel.Store.Osobe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adrese">
+        <PropertyRef Name="AdresaId" />
+      </Principal>
+      <Dependent Role="Osobe">
+        <PropertyRef Name="AdresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Osobe_Mjesta">
+    <End Role="Mjesta" Type="AgencijaModel.Store.Mjesta" Multiplicity="1" />
+    <End Role="Osobe" Type="AgencijaModel.Store.Osobe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mjesta">
+        <PropertyRef Name="MjestoId" />
+      </Principal>
+      <Dependent Role="Osobe">
+        <PropertyRef Name="MjestoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Racuni_Rezervacija">
+    <End Role="Rezervacija" Type="AgencijaModel.Store.Rezervacija" Multiplicity="0..1" />
+    <End Role="Racuni" Type="AgencijaModel.Store.Racuni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rezervacija">
+        <PropertyRef Name="RezervacijaId" />
+      </Principal>
+      <Dependent Role="Racuni">
+        <PropertyRef Name="RezervacijaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Radnici_Osobe">
+    <End Role="Osobe" Type="AgencijaModel.Store.Osobe" Multiplicity="1" />
+    <End Role="Radnici" Type="AgencijaModel.Store.Radnici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Osobe">
+        <PropertyRef Name="OsobaId" />
+      </Principal>
+      <Dependent Role="Radnici">
+        <PropertyRef Name="OsobaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Radnici_SkolskaSprema">
+    <End Role="SkolskaSprema" Type="AgencijaModel.Store.SkolskaSprema" Multiplicity="1" />
+    <End Role="Radnici" Type="AgencijaModel.Store.Radnici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SkolskaSprema">
+        <PropertyRef Name="SkolskaSpremaId" />
+      </Principal>
+      <Dependent Role="Radnici">
+        <PropertyRef Name="SkolskaSpremaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Radnici_Struka">
+    <End Role="Struka" Type="AgencijaModel.Store.Struka" Multiplicity="1" />
+    <End Role="Radnici" Type="AgencijaModel.Store.Radnici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Struka">
+        <PropertyRef Name="StrukaId" />
+      </Principal>
+      <Dependent Role="Radnici">
+        <PropertyRef Name="StrukaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rezervacija_Klijenti">
+    <End Role="Klijenti" Type="AgencijaModel.Store.Klijenti" Multiplicity="1" />
+    <End Role="Rezervacija" Type="AgencijaModel.Store.Rezervacija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klijenti">
+        <PropertyRef Name="KlijentId" />
+      </Principal>
+      <Dependent Role="Rezervacija">
+        <PropertyRef Name="KlijentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rezervacija_StavkeRezervacije">
+    <End Role="StavkeRezervacije" Type="AgencijaModel.Store.StavkeRezervacije" Multiplicity="1" />
+    <End Role="Rezervacija" Type="AgencijaModel.Store.Rezervacija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StavkeRezervacije">
+        <PropertyRef Name="StavkeRezervacijeId" />
+      </Principal>
+      <Dependent Role="Rezervacija">
+        <PropertyRef Name="StavkeRezervacijeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StavkeRezervacije_Radnici">
+    <End Role="Radnici" Type="AgencijaModel.Store.Radnici" Multiplicity="1" />
+    <End Role="StavkeRezervacije" Type="AgencijaModel.Store.StavkeRezervacije" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Radnici">
+        <PropertyRef Name="RadnikId" />
+      </Principal>
+      <Dependent Role="StavkeRezervacije">
+        <PropertyRef Name="RadnikId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="esp_KlijentiChangeUsername" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Naziv" Type="nvarchar" Mode="In" />
+    <Parameter Name="KorisnickoIme" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_KlijentiInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Naziv" Type="nvarchar" Mode="In" />
+    <Parameter Name="Telefon" Type="nchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="UlicaIBroj" Type="nvarchar" Mode="In" />
+    <Parameter Name="MjestoID" Type="int" Mode="In" />
+    <Parameter Name="TipAktivnostiId" Type="int" Mode="In" />
+    <Parameter Name="KorisnickoIme" Type="nvarchar" Mode="In" />
+    <Parameter Name="LozinkaSalt" Type="nvarchar" Mode="In" />
+    <Parameter Name="LozinkaHash" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_KlijentiResetPass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Naziv" Type="nvarchar" Mode="In" />
+    <Parameter Name="LozinkaSalt" Type="nvarchar" Mode="In" />
+    <Parameter Name="LozinkaHash" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_KlijentiSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="esp_KlijentiSelectAllByNaziv" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Naziv" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_KlijentiSelectToUpdateAccessDataByNaziv" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Naziv" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_KlijentiUpdateLicnihPodataka" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Naziv" Type="nvarchar" Mode="In" />
+    <Parameter Name="Telefon" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="UlicaIBroj" Type="nvarchar" Mode="In" />
+    <Parameter Name="MjestoId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_KorisniciInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Ime" Type="nvarchar" Mode="In" />
+    <Parameter Name="Prezime" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Telefon" Type="nvarchar" Mode="In" />
+    <Parameter Name="KorisnickoIme" Type="nvarchar" Mode="In" />
+    <Parameter Name="LozinkaSalt" Type="nvarchar" Mode="In" />
+    <Parameter Name="LozinkaHash" Type="nvarchar" Mode="In" />
+    <Parameter Name="MjestoId" Type="int" Mode="In" />
+    <Parameter Name="UlicaIBroj" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_KorisniciResetPass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KorisnikID" Type="int" Mode="In" />
+    <Parameter Name="LozinkaSalt" Type="nvarchar" Mode="In" />
+    <Parameter Name="LozinkaHash" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_KorisniciSelectById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KorisnikID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_KorisniciSelectByKorisnickoIme" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KorisnickoIme" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_KorisniciSelectByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ImeIPrezime" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_KorisniciUlogeDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KorisnikID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_KorisniciUlogeInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KorisnikId" Type="int" Mode="In" />
+    <Parameter Name="UlogaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_KorisniciUlogeSelectByKorisnik" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KorisnikID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_KorisniciUpdateStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KorisnikID" Type="int" Mode="In" />
+    <Parameter Name="StatusNaSistemu" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="esp_MjestaSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="esp_OsobeSelectByKorisnikID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KorisnikId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_OsobeUpdateLicnihPodataka" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OsobaId" Type="int" Mode="In" />
+    <Parameter Name="Ime" Type="nvarchar" Mode="In" />
+    <Parameter Name="Prezime" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Telefon" Type="nvarchar" Mode="In" />
+    <Parameter Name="UlicaIBroj" Type="nvarchar" Mode="In" />
+    <Parameter Name="MjestoId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_RacunInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Iznos" Type="int" Mode="In" />
+    <Parameter Name="RezervacijaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_RacunSelectByClientId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KlijentID" Type="int" Mode="In" />
+    <Parameter Name="RezervacijaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_RacunSelectByRezervacijaId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RezervacijaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_RacunSelectDataOnly" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RadnikID" Type="int" Mode="In" />
+    <Parameter Name="RezervacijaID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_RadniciInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Ime" Type="nvarchar" Mode="In" />
+    <Parameter Name="Prezime" Type="nvarchar" Mode="In" />
+    <Parameter Name="JMBG" Type="nvarchar" Mode="In" />
+    <Parameter Name="UlicaIBroj" Type="nvarchar" Mode="In" />
+    <Parameter Name="MjestoId" Type="int" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Telefon" Type="nvarchar" Mode="In" />
+    <Parameter Name="StrukaId" Type="int" Mode="In" />
+    <Parameter Name="SkolskaSpremaId" Type="int" Mode="In" />
+    <Parameter Name="CijenaPoSatu" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="esp_RadniciOsobeSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RadnikId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_RadniciOsobeSelectById_ToUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RadnikId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_RadniciOsobeSelectByName_ToUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ImeIPrezime" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_RadniciRezervacijeByRadnikId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RadnikId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_RadniciRezervacijeByRadnikSurName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Prezime" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_RadniciSelectByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RadnikID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_RadniciSelectByStrukaNaziv" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StrukaNaziv" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_RadniciSelectNamesOnly" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="esp_RadniciUpdateOsnovnihPodataka" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OsobaId" Type="int" Mode="In" />
+    <Parameter Name="RadnikId" Type="int" Mode="In" />
+    <Parameter Name="Telefon" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="CijenaPoSatu" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="esp_RadniciUpdateStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RadnikID" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="esp_RezervacijaCreate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KlijentId" Type="int" Mode="In" />
+    <Parameter Name="RadnikId" Type="int" Mode="In" />
+    <Parameter Name="DatumRezervacije" Type="datetime" Mode="In" />
+    <Parameter Name="DatumPocetka" Type="datetime" Mode="In" />
+    <Parameter Name="DatumZavrsetka" Type="datetime" Mode="In" />
+    <Parameter Name="BrojRadnihSati" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_RezervacijeCancelByRadnikId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RadnikId" Type="int" Mode="In" />
+    <Parameter Name="DatumRezervacije" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="esp_RezervacijeSelectByClientName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Naziv" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_RezervacijeSelectByKlijentId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KlijentId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_SkolskaSpremaInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Naziv" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_SkolskaSpremaSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="esp_StavkeRezervacijeSelectByRadnikID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RadnikID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_StrukaInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Naziv" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_StrukaSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="esp_StrukeSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="esp_TipAktivnostiInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Naziv" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_TipAktivnostiSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="esp_UlogeInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Naziv" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_UlogeSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="esp_UlogeSelectByKorisnikId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KorisnikId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_web_KlijentiInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Naziv" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="UlicaIBroj" Type="nvarchar" Mode="In" />
+    <Parameter Name="MjestoID" Type="int" Mode="In" />
+    <Parameter Name="TipAktivnostiId" Type="int" Mode="In" />
+    <Parameter Name="KorisnickoIme" Type="nvarchar" Mode="In" />
+    <Parameter Name="LozinkaSalt" Type="nvarchar" Mode="In" />
+    <Parameter Name="LozinkaHash" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_web_KlijentiSelectByKorisnickoIme" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KorisnickoIme" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="esp_web_OcjeneUslugeInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KlijentId" Type="int" Mode="In" />
+    <Parameter Name="RezervacijaId" Type="int" Mode="In" />
+    <Parameter Name="Ocjena" Type="int" Mode="In" />
+    <Parameter Name="Primjedba" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Sugestije" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="esp_web_PreporukaPoOcjeni" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="esp_web_PreporukaPoStruci" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StrukaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_web_RadniciSelectByStruka" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StrukaId" Type="int" Mode="In" />
+    <Parameter Name="Offset" Type="int" Mode="In" />
+    <Parameter Name="MaxRows" Type="int" Mode="In" />
+    <Parameter Name="TotalRows" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="esp_web_RadniciSelectByStrukaImeIPrezime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StrukaId" Type="int" Mode="In" />
+    <Parameter Name="ImeIPrezime" Type="nvarchar" Mode="In" />
+    <Parameter Name="Offset" Type="int" Mode="In" />
+    <Parameter Name="MaxRows" Type="int" Mode="In" />
+    <Parameter Name="TotalRows" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="esp_web_RezervacijaRadniciSelectByKlijentId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KlijentId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_xrp_Racun_SelectByClientId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KlijentId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="esp_xrp_RadniciOsobeSelect_NoArgs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="esp_xrp_RezervacijeUPeriodu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DatumPocetka" Type="datetime" Mode="In" />
+    <Parameter Name="DatumZavrsetka" Type="datetime" Mode="In" />
+  </Function>
+</Schema>
